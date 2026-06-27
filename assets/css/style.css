@@ -1,0 +1,458 @@
+/* Import Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+    --primary-color: #0F7B3F;
+    --primary-rgb: 15, 123, 63;
+    --primary-hover: #0a542c;
+    --secondary-color: #f39c12;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --bg-light: #f8f9fa;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+    --dark-bg: #0f172a;
+    --dark-card: #1e293b;
+    --dark-border: #334155;
+    --dark-text: #f1f5f9;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Base styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Dark Mode Implementation */
+body.dark-mode {
+    color: var(--dark-text);
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode .card,
+body.dark-mode .modal-content,
+body.dark-mode .dropdown-menu,
+body.dark-mode .sidebar {
+    background-color: var(--dark-card) !important;
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .bg-white {
+    background-color: var(--dark-card) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .text-dark {
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .text-muted, 
+body.dark-mode .text-light {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .border {
+    border-color: var(--dark-border) !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: var(--dark-bg) !important;
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25) !important;
+}
+
+body.dark-mode .page-link {
+    background-color: var(--dark-card) !important;
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .list-group-item {
+    background-color: var(--dark-card) !important;
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text) !important;
+}
+
+/* Green Muhammadiyah UI Elements */
+.text-primary-muh {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary-muh {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+.btn-primary-muh {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    transition: all var(--transition-speed);
+}
+
+.btn-primary-muh:hover, .btn-primary-muh:focus {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.btn-outline-muh {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    transition: all var(--transition-speed);
+}
+
+.btn-outline-muh:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+}
+
+body.dark-mode .glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1abc9c 100%);
+    color: var(--white);
+}
+
+/* Card Enhancements */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Navigation */
+.navbar-custom {
+    transition: all 0.4s ease;
+    padding: 1rem 0;
+}
+
+.navbar-custom.navbar-scrolled {
+    background-color: var(--white) !important;
+    box-shadow: var(--shadow-soft);
+    padding: 0.5rem 0;
+}
+
+body.dark-mode .navbar-custom.navbar-scrolled {
+    background-color: var(--dark-card) !important;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+.navbar-custom .nav-link {
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-custom.navbar-scrolled .nav-link {
+    color: var(--text-dark);
+}
+
+body.dark-mode .navbar-custom.navbar-scrolled .nav-link {
+    color: var(--dark-text);
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 123, 63, 0.9) 0%, rgba(10, 50, 20, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Sidebar for dashboard layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--white);
+    border-right: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar.collapsed {
+    margin-left: -260px;
+}
+
+.main-content {
+    flex-grow: 1;
+    min-width: 0;
+    background-color: var(--bg-light);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .main-content {
+    background-color: var(--dark-bg);
+}
+
+.sidebar .nav-link-side {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 0.2rem 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+}
+
+.sidebar .nav-link-side i {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.sidebar .nav-link-side:hover,
+.sidebar .nav-link-side.active {
+    color: var(--primary-color);
+    background-color: rgba(15, 123, 63, 0.1);
+}
+
+body.dark-mode .sidebar .nav-link-side:hover,
+body.dark-mode .sidebar .nav-link-side.active {
+    color: #1abc9c;
+    background-color: rgba(26, 188, 156, 0.1);
+}
+
+/* Form validations style */
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+.was-validated .form-control:valid {
+    border-color: #198754;
+}
+
+/* Upload Progress Styles */
+.upload-dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.upload-dropzone:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(15, 123, 63, 0.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Dark mode toggle switch button */
+.dark-mode-toggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Sticky top content */
+.top-navbar {
+    height: 60px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+body.dark-mode .top-navbar {
+    background-color: var(--dark-card);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+body.dark-mode .loading-overlay {
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Stats counter card styling */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+/* SweetAlert overrides for dark mode */
+body.dark-mode .swal2-popup {
+    background-color: var(--dark-card) !important;
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .swal2-title {
+    color: var(--dark-text) !important;
+}
+
+/* DataTables styling customization */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 8px !important;
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--primary-hover) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Custom responsiveness for tablets/mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        height: 100%;
+    }
+    
+    .navbar-custom {
+        background-color: var(--primary-color) !important;
+        padding: 0.5rem 0;
+    }
+    
+    body.dark-mode .navbar-custom {
+        background-color: var(--dark-card) !important;
+    }
+    
+    .navbar-custom .nav-link {
+        color: var(--white) !important;
+        padding: 0.5rem 1rem;
+    }
+}
